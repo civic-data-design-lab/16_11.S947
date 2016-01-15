@@ -1,4 +1,4 @@
-CambridgeBostonSomervilleBrooklineCity, Number
+City, Number
 Cambridge, 400
 Boston, 900
 Somerville, 300
