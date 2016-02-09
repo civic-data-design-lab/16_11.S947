@@ -39,14 +39,14 @@ All HTML documents start with the following line of code:
 <!DOCTYPE html>
 ```
 
-Elements of the page are organized by tags. HTML tags are keywords surrounded by angled brackets. This tag states for the browser that the rest of your file will be written in HTML. The rest of our document will follow a very simple rule, no matter how complex the code. When you write a tag (aka start tag), you will need a second tag that declares the end of that part of the document (aka end tag). Content goes between the start and end tags. A start tag looks like and an end tag has a dash in front of it .
+Elements of the page are organized by tags. HTML tags are keywords surrounded by angled brackets. This tag states for the browser that the rest of your file will be written in HTML. The rest of our document will follow a very simple rule, no matter how complex the code. When you write a tag (aka start tag), you will need a second tag that declares the end of that part of the document (aka end tag). **Content goes between the start and end tags**.
 
 
 ```xml
 <tag>...</tag>
 ```
 
-Not all tags contain content, for those that don't, the syntax is:
+Tags without content are called **void elements**.
 
 ```xml
 <tag />
