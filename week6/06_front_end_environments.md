@@ -31,7 +31,7 @@ When a browser requests your page, your server will return the index.html file i
 
 <img src="http://duspviz.mit.edu/wp-content/uploads/2015/01/file-structure.png" alt="Drawing"/>
 
-### Key Concepts
+### HTML: The Core Concepts
 
 All HTML documents start with the following line of code:
 
