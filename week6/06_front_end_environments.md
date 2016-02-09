@@ -104,7 +104,7 @@ The [Document Object Model](https://www.w3.org/DOM/) represents the hierarchy of
 
 ```xml
 <!-- LINKS. A is used to define a hyperlink -->
-<a>...</a>
+<a href="http://somesite.www">...</a>
 <!-- IMAGE tag to define a link to an image in your document -->
 <img />
 <!-- PARAGRAPH tag for large blocks of body text -->
