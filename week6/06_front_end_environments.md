@@ -18,7 +18,7 @@ publish your page. If you need a refresher, revisit Week 1 at:
 
 *How is everything related?*
 
-![Environments](images/environment.png =250x)
+<img src="images/environment.png" alt="Drawing" style="width: 250px;"/>
 
 HTML, standing for [HyperText Markup Language](https://en.wikipedia.org/wiki/HTML), organizes the **content**
 of your page by creating elements in which your page materials are contained.
