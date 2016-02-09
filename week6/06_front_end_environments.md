@@ -158,6 +158,9 @@ Tags are specified and defined using attributes, classes, and IDs. These attribu
 ```xml
 <div style="background-color:#0000FF" class="header" id="main">...</div>
 ```
+===
+
+### Modify your Document
 
 Let's get into the document a bit.
 
