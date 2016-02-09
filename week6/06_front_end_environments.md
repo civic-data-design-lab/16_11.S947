@@ -1,6 +1,6 @@
 # Front End Environments
 ## HTML/CSS/JavaScript: An Overview
-## 
+
 All the files you will want to use today are provided in the Week 6
 folder of the class repo.
 
@@ -8,8 +8,8 @@ In the following steps, we create a blank document, fill it with HTML
 code, save it as **index.html**, and view results in our browser. We
 will hit on the concepts of HTML, style the page with CSS, and
 
-### Getting Started
-### 
+#### Getting Started
+
 We will work in our github.io pages today, updating and building from
 the work we completed in Week 1. Push your files your Github site to
 publish your page. If you need a refresher, revisit Week 1 at:
@@ -18,14 +18,20 @@ publish your page. If you need a refresher, revisit Week 1 at:
 
 *How is everything related?*
 
-<img src="images/environment.png" alt="Drawing" style="width: 250px;"/>
+<img src="images/environment.png" alt="Drawing" style="width: 50%;"/>
 
 HTML, standing for [HyperText Markup Language](https://en.wikipedia.org/wiki/HTML), organizes the **content**
 of your page by creating elements in which your page materials are contained.
 
-## Organize your Directory
+### Organize your Directory
 
-The directory in which you keep
+The directory in which you keep your website materials should be organized in the following manner.
+
+When a browser requests your page, your server will return the index.html file in the root-directory. The index.html is your 'root'... or 'home'... page.
+
+<img src="http://duspviz.mit.edu/wp-content/uploads/2015/01/file-structure.png" alt="Drawing"/>
+
+### Key Concepts
 
 All HTML documents start with the following line of code:
 
