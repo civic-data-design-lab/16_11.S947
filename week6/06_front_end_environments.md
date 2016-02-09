@@ -189,6 +189,22 @@ Adding a link to your site is simple. To add a link, we use the a tag. The a tag
 
 #### iii. Add an Image
 
+Adding an image is just as easy as adding a hyperlink, although a bit different. An image is not stored on your webpage, but it sits on your server, just like your other files. When you display an image in an html file, you are linking to the image. The HTML tells the browser to locate and display it. Therefore, we will follow a multiple step process.
+
+* Create a folder named <strong>images</strong> in your special folder. <em>You only need to do this once, you can place all subsequent images here.</em>
+* Copy and paste <strong>cat.png</strong> from the downloaded materials into the <strong>images</strong> folder you just created.
+* Use the <strong>img</strong> tag to link to that image in your <strong>index.html</strong>
+
+Your file structure, once the <strong>images</strong> folder is created and you have copied <strong>cat.png</strong>. In other words, the image is now being served.
+
+<img src="http://duspviz.mit.edu/wp-content/uploads/2015/01/file-structure-images1.png" alt="file-structure-images" width="134" height="130" class="aligncenter size-full wp-image-1503" />
+
+Now we can add the image to our index.html. The following line of code uses the img tag, and then links to our image. We will use the <strong>src</strong> attribute to name the source of the image. The image is coming from our own server, we don't need to go externally to get it, so we can put the name of the folder and image as our image address.
+
+Copy and paste this following line in between the <strong>body</strong> tags in your <strong>index.html</strong>, after your last paragraph.
+
+*Can you add another image, perhaps one showing Riyadh?*
+
 #### Our Code
 
 At present, your document will look something like the following.
