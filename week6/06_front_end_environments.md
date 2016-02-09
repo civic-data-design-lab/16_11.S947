@@ -105,15 +105,39 @@ The [Document Object Model](https://www.w3.org/DOM/) represents the hierarchy of
 <a>...</a>
 ```
 
+**img** defines a link to an image in your document.
+
+```xml
+<img />
+```
+
 **p** paragraphs for large blocks of text.
 
 ```xml
 <p>...</p>
 ```
 
+**ul** represents an unordered list, **ol** is an ordered list. **li** are lines in the list.
+
+```xml
+<ul>
+	<li>...</li>
+</ul>
+
+<ol>
+	<li>...</li>
+</ol>
+```
+
+**span** is for groupings of inline elements.
+
+```xml
+<span>...</span>
+```
+
 #### DIV Tags
 
-The **div** tag defines a division or section of an HTML page. One page can contain many **div** elements, and one **div** element can contain many nested elements. The div tag is an element of HTML that allows you to group content into containers (or divisions) you can organize and style on your web page, and divs play nicely with CSS (Cascading Style Sheets). CSS is a style sheet language used for describing the look and formatting of an HTML page, we will introduce it in the next step.
+Perhaps the most common tag, the **div** tag defines a division or section of an HTML page. One page can contain many **div** elements, and one **div** element can contain many nested elements. The div tag is an element of HTML that allows you to group content into containers (or divisions) you can organize and style on your web page, and divs play nicely with CSS (Cascading Style Sheets). CSS is a style sheet language used for describing the look and formatting of an HTML page, we will introduce it in the next step.
 
 #### Tag Attributes, Classes, and IDs
 
@@ -130,6 +154,15 @@ Tags are specified and defined using attributes, classes, and IDs. These attribu
 ```xml
 <a href="http://www.github.com" class="button" id="unique">...</tag>
 ```
+
+*or*
+
+
+```xml
+<div style="background-color:#0000FF" class="header" id="main">...</div>
+```
+
+Let's get into the document a bit.
 
 #### i. Add Text
 
