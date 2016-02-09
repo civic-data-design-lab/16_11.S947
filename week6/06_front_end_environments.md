@@ -80,9 +80,50 @@ The [Document Object Model](https://www.w3.org/DOM/) represents the hierarchy of
 
 #### i. Add Text
 
+Our HTML document is looking bare, we need to add content. We can start by adding a heading that welcomes visitors to our site and a couple simple paragraphs. Working between the body tags, add the following lines.
+
+Modify the HTML code on the page to include the following. Add some paragraph **p** elements within the body element of your page.
+
+```xml
+<h1>Welcome to my Webpage!</h1>
+<p>This is my first webpage! I created it during IAP 2015.</p>
+<p>This is my second paragraph. So much things.</p>
+```
+
+The h1 tag signifies a heading, this is a bolded style of text that vary in size ranging from h1 to h6. The p tag signifies a paragraph that can contain large blocks of text. 
+
 #### ii. Add a Link
 
+Adding a link to your site is simple. To add a link, we use the a tag. The a tag defines a hyperlink that can be used to link from one page to another. HTML tags can have attributes. Attributes define and provide additional information about an element. To create a hyperlink, we use the href attribute of the a tag. The following line contains a link to the DUSP home page, and illustrates how you would set up a link. You can place links separate from your paragraphs, or place them within. Write the following line of code at the end your second paragraph, just before the p end tag.
+
+```xml
+<a href="http://dusp.mit.edu">Take me to DUSP.</a>
+```
+
+*Can you add a link that takes you to Google Maps?*
+
 #### iii. Add an Image
+
+#### Our Code
+
+At present, your document will look something like the following.
+
+```xml
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8"> 
+    	<title>Hello World</title>
+	</head>
+	<body>
+		<!-- This is a comment -->
+		<h1>Welcome to my Webpage!</h1>
+		<p>This is my first webpage! I created it during IAP 2015.</p>
+		<p>This is my second paragraph. So much things. <a href="http://dusp.mit.edu">Take me to DUSP.</a></p>
+		<img src="images/cat.png"/>
+	</body>
+</html>
+```
 
 ### Push to Github
 
