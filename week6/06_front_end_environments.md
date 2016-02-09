@@ -57,16 +57,26 @@ Comments
 
 ```xml
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<title>Hello World</title>
+    	<meta charset="utf-8"> 
+    	<title>Hello World</title>
 	</head>
 	<body>
-		<!-- This is a comment. -->
-		<p>Hello World</p>
+		<!-- This is a comment -->
+		<h1>Hello World</h1>
+		<div>This is a page element.</div>
 	</body>
 </html>
 ```
+
+### The DOM: Document Object Model
+
+The [Document Object Model](https://www.w3.org/DOM/) represents the hierarchy of elements in our page. This is modeled using something commonly called the **DOM Tree**, and it consists of our HTML elements.
+
+*The DOM Tree*
+
+<img src="images/dom.png" alt="DOM" style="width: 50%;"/>
 
 #### i. Add Text
 
