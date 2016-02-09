@@ -65,7 +65,9 @@ Comments
 	<body>
 		<!-- This is a comment -->
 		<h1>Hello World</h1>
-		<div>This is a page element.</div>
+		<div id="main">
+			...
+		</div>
 	</body>
 </html>
 ```
@@ -78,16 +80,61 @@ The [Document Object Model](https://www.w3.org/DOM/) represents the hierarchy of
 
 <img src="images/dom.png" alt="DOM" style="width: 50%;"/>
 
-#### i. Add Text
+#### Common Tags
 
-Our HTML document is looking bare, we need to add content. We can start by adding a heading that welcomes visitors to our site and a couple simple paragraphs. Working between the body tags, add the following lines.
-
-Modify the HTML code on the page to include the following. Add some paragraph **p** elements within the body element of your page.
+**Body** contains all elements of the page.
 
 ```xml
-<h1>Welcome to my Webpage!</h1>
-<p>This is my first webpage! I created it during IAP 2015.</p>
-<p>This is my second paragraph. So much things.</p>
+<body>...</body>
+```
+
+**Head** contains meta information and links.
+
+```xml
+<head>...</head>
+```
+
+**a** an anchor that defines a hyperlink.
+
+```xml
+<a>...</a>
+```
+
+**p** paragraphs for large blocks of text.
+
+```xml
+<p>...</p>
+```
+
+#### DIV Tags
+
+The **div** tag defines a division or section of an HTML page. One page can contain many **div** elements, and one **div** element can contain many nested elements. The div tag is an element of HTML that allows you to group content into containers (or divisions) you can organize and style on your web page, and divs play nicely with CSS (Cascading Style Sheets). CSS is a style sheet language used for describing the look and formatting of an HTML page, we will introduce it in the next step.
+
+#### Tag Attributes, Classes, and IDs
+
+Tags are specified and defined using attributes, classes, and IDs. These attributes, classes, and IDs allow you to identify specific elements, modify individual elements and groups of elements, and set the characteristics of the elements.
+
+- *Attributes* define properties of the elements. Elements can have multiple attributes. For example, if the element is a link, where does the link take you.
+
+- *Classes* identify a group of elements that operate similarly or work in the same fashion. For example, a button.
+
+- *IDs* identify unique features and allow for and operations to be performed on that unique feature. In each document, each ID should be unique.
+
+*For Example:*
+
+```xml
+<a href="http://www.github.com" class="button" id="unique">...</tag>
+```
+
+#### i. Add Text
+
+Our HTML document is looking bare, we need to add content. We can start by modifying the heading that welcomes visitors to our site and add a couple paragraph elements.
+
+Modify the HTML code on the page to include the following. Add some paragraph **p** elements within the **div** element of your page.
+
+```xml
+<p>This is my first paragraph.</p>
+<p>This is my second paragraph.</p>
 ```
 
 The h1 tag signifies a heading, this is a bolded style of text that vary in size ranging from h1 to h6. The p tag signifies a paragraph that can contain large blocks of text. 
@@ -117,14 +164,18 @@ At present, your document will look something like the following.
 	</head>
 	<body>
 		<!-- This is a comment -->
-		<h1>Welcome to my Webpage!</h1>
-		<p>This is my first webpage! I created it during IAP 2015.</p>
-		<p>This is my second paragraph. So much things. <a href="http://dusp.mit.edu">Take me to DUSP.</a></p>
-		<img src="images/cat.png"/>
+		<h1>Hello World</h1>
+		<div id="main">
+			<p>This is my first paragraph.</p>
+			<p>This is my second paragraph. <a href="http://dusp.mit.edu">Take me to DUSP.</a></p>
+			<img src="images/cat.jpg"/>
+		</div>
 	</body>
 </html>
 ```
 
+*What does our DOM Tree look like at this point?*
+
 ### Push to Github
 
-Finally, when done with your edits. Push your site to Github
+Finally, when done with your edits. Commit yourPush your site to Github
