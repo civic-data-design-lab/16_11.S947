@@ -230,6 +230,12 @@ At present, your document will look something like the following.
 
 *What does our DOM Tree look like at this point?*
 
+===
+
+### CSS: The Core Concepts
+
+#### Cascading Style Sheets
+
 ### Push to Github
 
 Finally, when done with your edits. Commit yourPush your site to Github
