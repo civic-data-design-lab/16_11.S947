@@ -52,8 +52,13 @@ Tags without content are called **void elements**.
 <tag />
 ```
 
-Comments
+Comments look like the following. They are used to write human-readable notes in your code, but are ignored by the browser.
 
+```xml
+<!-- ... -->
+```
+
+A basic page, all together, will look like this. This will look awfully similar to week 1. Copy and paste this into a blank text document, and save it in your **github.io** repository as *hello-world.html*.
 
 ```xml
 <!DOCTYPE html>
