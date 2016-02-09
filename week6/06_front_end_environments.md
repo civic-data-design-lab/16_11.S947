@@ -94,7 +94,6 @@ The [Document Object Model](https://www.w3.org/DOM/) represents the hierarchy of
 <head>
 	...
 </head>
-
 <!-- BODY element containing all document content elements -->
 <body>
 	...
@@ -106,14 +105,10 @@ The [Document Object Model](https://www.w3.org/DOM/) represents the hierarchy of
 ```xml
 <!-- LINKS. A is used to define a hyperlink -->
 <a>...</a>
-
-
 <!-- IMAGE tag to define a link to an image in your document -->
 <img />
-
 <!-- PARAGRAPH tag for large blocks of body text -->
 <p>...</p>
-
 <!-- SPAN is for groups of inline elements -->
 <span>...</span>
 ```
@@ -122,16 +117,12 @@ The [Document Object Model](https://www.w3.org/DOM/) represents the hierarchy of
 ```xml
 <!-- UL defines an unordered list -->
 <ul>
-	<li>...</li> <!-- List element -->
+	<li>...</li> <!-- line in list -->
 </ul>
-
 <!-- OL defines an ordered list -->
 <ol>
-	<li>...</li> <!-- List element -->
+	<li>...</li> <!-- line in list -->
 </ol>
-
-<!-- SPAN is for groups of inline elements -->
-<span>...</span>
 ```
 
 #### DIV Tags
