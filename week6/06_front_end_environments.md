@@ -8,7 +8,7 @@ In the following steps, we create a blank document, fill it with HTML
 code, save it as **index.html**, and view results in our browser. We
 will hit on the concepts of HTML, style the page with CSS, and
 
-## Getting Started
+### Getting Started
 
 We will work in our github.io pages today, updating and building from
 the work we completed in Week 1. Push your files your Github site to
@@ -16,20 +16,21 @@ publish your page. If you need a refresher, revisit Week 1 at:
 
 [Week 1 - Intro to Git and Github](https://github.com/civic-data-design-lab/16_11.S947/blob/master/week1/Part1_IntroGitAndGithub.ipynb)
 
-## HTML/CSS/JavaScript
+#### How is Everything Related?
 
-How is everything related?
+Inline-style: 
+![Environments](images/environment.png)
+
 
 ## Organize your Directory
 ## 
 The directory in which you keep 
-## Key HTML Concepts
-## 
-## 
-## 
-## 
-## 
-```javascript var s = "JavaScript syntax highlighting"; alert(s); ```
+
+All HTML documents start with the following line of code:
+
+```
+<! DOCTYPE html>
+```
 
 ```python s = "Python syntax highlighting" print s ```
 
