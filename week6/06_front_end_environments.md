@@ -90,52 +90,51 @@ The [Document Object Model](https://www.w3.org/DOM/) represents the hierarchy of
 Some common tags.
 
 ```xml
-<!-- Head element containing meta information, style, and links -->
-<head>...</head>
+<!-- HEAD element containing meta information, style, and links -->
+<head>
+	...
+</head>
 
-<!-- Body element containing all document content elements -->
-<body>...</body>
-```
+<!-- BODY element containing all document content elements -->
+<body>
+	...
+</body>
 
-**a** an anchor that defines a hyperlink.
-
-```xml
+<!-- LINKS. A is used to define a hyperlink -->
 <a>...</a>
-```
 
-**img** defines a link to an image in your document.
 
-```xml
+<!-- IMAGE tag to define a link to an image in your document -->
 <img />
-```
 
-**p** paragraphs for large blocks of text.
-
-```xml
+<!-- PARAGRAPH tag for large blocks of body text -->
 <p>...</p>
-```
 
-**ul** represents an unordered list, **ol** is an ordered list. **li** are lines in the list.
-
-```xml
+<!-- Lists -->
+<!-- UL defines an unordered list -->
 <ul>
 	<li>...</li>
 </ul>
 
+<!-- OL defines an ordered list -->
 <ol>
 	<li>...</li>
 </ol>
-```
 
-**span** is for groupings of inline elements.
-
-```xml
+<!-- SPAN is for groups of inline elements -->
 <span>...</span>
 ```
 
 #### DIV Tags
 
 Perhaps the most common tag, the **div** tag defines a division or section of an HTML page. One page can contain many **div** elements, and one **div** element can contain many nested elements. The div tag is an element of HTML that allows you to group content into containers (or divisions) you can organize and style on your web page, and divs play nicely with CSS (Cascading Style Sheets). CSS is a style sheet language used for describing the look and formatting of an HTML page, we will introduce it in the next step.
+
+```xml
+<div id="main">
+	<!-- Content goes here -->
+	...
+</div>
+```
 
 #### Tag Attributes, Classes, and IDs
 
