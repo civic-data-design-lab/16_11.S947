@@ -87,16 +87,14 @@ The [Document Object Model](https://www.w3.org/DOM/) represents the hierarchy of
 
 #### Common Tags
 
-**Body** contains all elements of the page.
+Some common tags.
 
 ```xml
-<body>...</body>
-```
-
-**Head** contains meta information and links.
-
-```xml
+<!-- Head element containing meta information, style, and links -->
 <head>...</head>
+
+<!-- Body element containing all document content elements -->
+<body>...</body>
 ```
 
 **a** an anchor that defines a hyperlink.
