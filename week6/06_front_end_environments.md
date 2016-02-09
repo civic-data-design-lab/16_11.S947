@@ -35,18 +35,18 @@ When a browser requests your page, your server will return the index.html file i
 
 All HTML documents start with the following line of code:
 
-```
+```xml
 <! DOCTYPE html>
 ```
 
 Materials are organized into elements that are contained by tags. HTML tags are keywords surrounded by angled brackets. This tag states for the browser that the rest of your file will be written in HTML. The rest of our document will follow a very simple rule, no matter how complex the code. When you write a tag (aka start tag), you will need a second tag that declares the end of that part of the document (aka end tag). Content goes between the start and end tags. A start tag looks like and an end tag has a dash in front of it .
 
-```
+```xml
 <tag>...</tag>
 ```
 
 
-```
+```xml
 <!DOCTYPE html>
 <html>
 <!-- we need to put everything inside of an html tag. -->
@@ -64,3 +64,8 @@ Materials are organized into elements that are contained by tags. HTML tags are 
 
 ``` No language indicated, so no syntax highlighting. But let's throw in
 a <b>tag</b>. ```
+
+
+### Push to Github
+
+Finally, when done with your edits. Push your site to Github
