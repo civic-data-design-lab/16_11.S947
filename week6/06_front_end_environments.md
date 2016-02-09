@@ -87,7 +87,7 @@ The [Document Object Model](https://www.w3.org/DOM/) represents the hierarchy of
 
 #### Common Tags
 
-Some common tags.
+**Head** and **Body** elements are large containers.
 
 ```xml
 <!-- HEAD element containing meta information, style, and links -->
@@ -99,7 +99,11 @@ Some common tags.
 <body>
 	...
 </body>
+```
 
+**Links, Images** and **Paragraphs**
+
+```xml
 <!-- LINKS. A is used to define a hyperlink -->
 <a>...</a>
 
@@ -110,15 +114,20 @@ Some common tags.
 <!-- PARAGRAPH tag for large blocks of body text -->
 <p>...</p>
 
-<!-- Lists -->
+<!-- SPAN is for groups of inline elements -->
+<span>...</span>
+```
+
+**Lists**
+```xml
 <!-- UL defines an unordered list -->
 <ul>
-	<li>...</li>
+	<li>...</li> <!-- List element -->
 </ul>
 
 <!-- OL defines an ordered list -->
 <ol>
-	<li>...</li>
+	<li>...</li> <!-- List element -->
 </ol>
 
 <!-- SPAN is for groups of inline elements -->
