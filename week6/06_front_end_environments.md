@@ -39,28 +39,32 @@ All HTML documents start with the following line of code:
 <!DOCTYPE html>
 ```
 
-Materials are organized into elements that are contained by tags. HTML tags are keywords surrounded by angled brackets. This tag states for the browser that the rest of your file will be written in HTML. The rest of our document will follow a very simple rule, no matter how complex the code. When you write a tag (aka start tag), you will need a second tag that declares the end of that part of the document (aka end tag). Content goes between the start and end tags. A start tag looks like and an end tag has a dash in front of it .
+Elements of the page are organized by tags. HTML tags are keywords surrounded by angled brackets. This tag states for the browser that the rest of your file will be written in HTML. The rest of our document will follow a very simple rule, no matter how complex the code. When you write a tag (aka start tag), you will need a second tag that declares the end of that part of the document (aka end tag). Content goes between the start and end tags. A start tag looks like and an end tag has a dash in front of it .
+
 
 ```xml
 <tag>...</tag>
 ```
 
+Not all tags contain content, for those that don't, the syntax is:
+
+```xml
+<tag />
+```
+
+Comments
+
 
 ```xml
 <!DOCTYPE html>
 <html>
-<!-- we need to put everything inside of an html tag. -->
-<!-- This is a comment! -->
-<head>
-	<!-- The head contains information and metadata on your document, along with links to stylesheets. -->
-	<title>Hello World</title>
-	<!-- the "title" tag is the thing that is displayed on the tab. -->
-	<!-- The title is what a bookmark to this page will be named by default. -->
-</head>
-<body>
-	<!-- The main content of our page will go here. -->
-	<p>Hello World</p>
-</body>
+	<head>
+		<title>Hello World</title>
+	</head>
+	<body>
+		<!-- This is a comment. -->
+		<p>Hello World</p>
+	</body>
 </html>
 ```
 
