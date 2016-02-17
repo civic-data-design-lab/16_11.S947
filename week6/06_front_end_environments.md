@@ -228,6 +228,10 @@ At present, your document will look something like the following.
 </html>
 ```
 
+Our page, with this code, contains a bit more content now.
+
+<img src="images/simple_page.png" alt="page" />
+
 *What does our DOM Tree look like at this point?*
 
 ===
@@ -244,6 +248,25 @@ We are going to be using CSS3, which is the third iteration of the CSS styling l
 
 The language 'cascades' in the effect that if you style an element, any nested elements will get the same styling unless you specify otherwise. For example, if you set the font for your body element, a p (paragraph) will also be set to the same font, unless you specify specifically in the CSS that you want that p to have another font. This is a useful method in that is minimizes the code you need to write and forces you to be careful with your page organization.
 
+#### Link a CSS File to your Site
+
+CSS can be added to style your website in one of a few ways. You can apply CSS to individual elements, embed it within your HTML document, or create a separate CSS file and link it to your HTML doc. In your file, add the following link in **head** section of your document.
+
+```xml
+<link href="css/main.css" rel="stylesheet" />
+```
+
+Save your document, and refresh your page. Everything should center. This is because we applied CSS code to our document by linking to our style file.
+
+In the materials for this week, locate the file 'main.css'. This is our stylesheet. We can name it anything really, as long as it has the CSS file type. Open this in your text editor to view the contents. It is a very simple bit of CSS that tells everything in the **body** element to center in the page.
+
+```css
+body {
+	text-align: center;
+}
+```
+
+====
 ### Push to Github
 
 Finally, when done with your edits. Commit yourPush your site to Github
