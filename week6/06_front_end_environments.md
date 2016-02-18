@@ -266,6 +266,76 @@ body {
 }
 ```
 
+All content in the **body** tag are now in the center of the page.
+
+#### Basic Syntax
+
+Basic CSS syntax looks like the following.
+
+```css
+[selector] {
+	[property]: [value];
+}
+```
+
+Selectors are page elements, and can be tags, ids, titles, classes, etc. For example, if we want to style everything that falls in the **body** tag, we use the **body** selector as above.
+
+Selectors can be specified **by element:**
+
+```css
+p {
+	font-size: 12;
+}
+```
+
+**By class:**
+
+```css
+.main {
+	font-size: 12;
+}
+```
+
+**By ID:**
+
+```css
+#main {
+	font-size: 12;
+}
+```
+
+#### Inheritance and Order of Operations
+
+CSS follows the DOM model, with styles applied to elements higher in the DOM applied to those that are descendents. If selectors are defined in multiple locations in your CSS, which one gets precedence?
+
+<img src="images/dom.png" alt="DOM" style="width: 50%;"/>
+
+There are two general rules of thumb.
+
+* CSS defined last in your document will supersede CSS set on a selector earlier in your document.
+* The more specific selector will override the less specific selector. For example, a style set on the body selector will be overridden by a style set on an element within the body, such as one by ID.
+
+
+#### Properties and Values
+
+There are hundreds of properties you can set using CSS. Some of these include font, color, location on page, opacity, size, etc. An extensive list can be found in CSS reference documents. Two prominent references are by W3Schools and Mozilla, check them out for further reading.
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" title="Mozilla CSS Reference" target="_blank">Mozilla CSS Reference</a></li>
+<li><a href="http://www.w3schools.com/cssref/default.asp" title="w3Schools CSS Reference" target="_blank">W3Schools CSS Reference</a></li>
+</ul>
+
+
+#### *Style Font and Type Size*
+
+#### *Change Link Color*
+
+#### *Adjusting Element Size and Location*
+
+
+
+
+
 ====
 ### Push to Github
 
