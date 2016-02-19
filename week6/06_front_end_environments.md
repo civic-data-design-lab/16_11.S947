@@ -686,6 +686,10 @@ If we wanted to change the color, we would access it through this method. For ex
 
 [Read more about objects and properties](http://www.w3schools.com/js/js_properties.asp)
 
+#### Working with Libraries
+
+A library is a collection of pre-written JavaScript with allows for easier development of JavaScript based applications. Libraries are packages of code that when loaded into your document allow access to the objects of that code. In this class, we are primarily going to be using three JavaScript libraries: **jQuery**, **Leaflet**, and **D3**.
+
 ===
 
 ### Website Frameworks
