@@ -38,17 +38,13 @@ In the body of your HTML document, above the script. Add a button using the foll
 <button type="button" onclick="helloworld()">Click Me!</button>
 ```
 
-Now, we are programming. Typical JavaScript syntax:
+Now, we are programming! Let's learn JavaScript!
 
-**Variable**
+#### JavaScript Consoles
 
-var
+Try out all of the examples today using [REPL.IT](https://repl.it/), an online sandbox for testing out JavaScript.
 
-**Object**
-
-**Method/Function**
-
-#### The In-browser JavaScript Console
+*The In-browser JavaScript Console*
 
 JavaScript is the language of the modern web browser. Modern web browsers have JavaScript consoles built that we can explore the basics of the language with. Open up our browser, navigate to a page, and open the browser JavaScript console and do some basic coding to show some of the principles. If you are using Chrome or Firefox, there are integrated JavaScript consoles that allow you to input and explore JavaScript. Use **CTRL+SHIFT+K** (Windows)/**CMD+OPTION+K** (Mac) for Firefox, and **CTRL+SHIFT+J** (Windows)/**CMD+OPTION+J** (Mac) for Chrome. In the following steps we will introduce some concepts, try them using the console, and look for how the concepts manifest in our web map code.
 
@@ -375,6 +371,47 @@ var newCar = {
 
 console.log(newCar);
 ```
+
+#### JSON: JavaScript Object Notation
+
+Data can be stored in something called JSON, which is a JavaScript element. A JSON is structured as follows:
+
+```js
+// set employee directory dataset
+var directory = {"employees":[
+    {"firstName":"John", "lastName":"Doe"}, 
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter", "lastName":"Jones"}
+]}
+
+console.log(directory.employees)
+console.log(directory.employees[1]);
+console.log(directory.employees[1].firstName);
+```
+
+A GeoJSON is a Geographic JSON element, and contains geometry!
+
+```js
+var dataset = {
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [125.6, 10.1]
+  },
+  "properties": {
+    "name": "Dinagat Islands"
+  }
+}
+
+console.log(dataset);
+console.log(dataset.type);
+console.log(dataset.geometry.coordinates);
+console.log(dataset.properties);
+```
+
+#### Accessing Elements of your Page
+
+In the script we first ran, 
 
 *Putting this together:*
 
