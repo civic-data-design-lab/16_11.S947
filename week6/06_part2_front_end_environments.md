@@ -417,7 +417,11 @@ console.log(dataset.properties);
 
 #### Accessing Elements of your Page
 
-MORE HERE
+Accessing elements of your page in JavaScript is easy because JavaScript can read the DOM, then adjust properties such as style, content, images, links, and alot more. One method you can use to get into the document is call the document object. Type this into your console and see that you can view the entire page.
+
+```js
+document.getElementById("image").src = "landscape.jpg";
+```
 
 **Putting this together:**
 
@@ -522,6 +526,7 @@ For a crash course in Bootstrap, a highly used and robust framework, please visi
 
 [Bootstrap Templates](http://duspviz.mit.edu/web-map-workshop/bootstrap-templates/)
 
+USE TEMPLATES! They will make your life so much easier!
 
 ====
 ### Push to Github
