@@ -2,11 +2,11 @@
 ## HTML/CSS/JavaScript: An Overview
 
 All the files you will want to use today are provided in the Week 6
-folder of the class repo.
+folder of the class repo. The files for the website are in 'website'.
 
 In the following steps, we create a blank document, fill it with HTML
 code, save it as **index.html**, and view results in our browser. We
-will hit on the concepts of HTML, style the page with CSS, and
+will hit on the concepts of HTML, style the page with CSS, and add interaction using JavaScript.
 
 #### Getting Started
 
@@ -424,4 +424,4 @@ CSS is the way you style your page, learn more by referring to the references, o
 
 ===
 
-This is the end of Part 1. In Part 2, we address the third leg of the tripod. JavaScript!
+This is the end of Part 1. [Continue to Part 2 for an introduction to JavaScript!](https://github.com/civic-data-design-lab/16_11.S947/blob/master/week6/06_part2_front_end_environments.md)

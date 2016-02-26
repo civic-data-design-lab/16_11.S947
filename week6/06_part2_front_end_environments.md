@@ -1,3 +1,9 @@
+# Front End Environments
+## HTML/CSS/JavaScript: An Overview
+
+All the files you will want to use today are provided in the Week 6
+folder of the class repo. The files for the website are in 'website'.
+
 ### JavaScript: The Core Concepts
 
 In the website ecosystem, the next component is the behavior. How do we take these styled elements and interact with them in a manner in which we can load data, dynamically populate elements, and create animations and interactions. This is where JavaScript comes in.
@@ -411,9 +417,9 @@ console.log(dataset.properties);
 
 #### Accessing Elements of your Page
 
-In the script we first ran, 
+MORE HERE
 
-*Putting this together:*
+**Putting this together:**
 
 * Variables are local if they are defined in functions.
 * Functions are actually objects.
@@ -432,9 +438,81 @@ What are these used for?
 
 **D3** stands for Data Driven Documents, and is a library designed for visualizing data and making beautiful interactive graphics. D3 uses JavaScript to **bind** data values to page elements and changes properties of those elements accordingly. Very powerful. We will do this next week!
 
-For now... let's use the Leaflet library to create a webmap of Foursquare checkins in Riyadh.
+For now... let's use the Leaflet library to create a webmap of Tweets in Riyadh.
 
 #### Let's Make a Leaflet Map
+
+[Leaflet](http://leafletjs.com/) is a library designed for making web-powered maps using JavaScript. The library contains many objects that help with designing maps. The main method of the library is to take a **div** element and turn it into a [slippy map](http://wiki.openstreetmap.org/wiki/Slippy_Map). You can then use other methods of the library to add data layers, user interaction, and styling. In this exercise, we are going to set up a very simple map on our page to show the use of JavaScript.
+
+#### 1. Add the Library
+
+To add the Leaflet library to your page, you need to add both the script and stylesheets to your document. In your document, add the following. This will add the main Leaflet CSS stylesheet and JavaScript library to our document so we can use the styles and methods.
+
+Put the Leaflet CSS file in the head section. (Note: Put this *above* the main.css link in your stylesheet. CSS runs in order down your page, this will let you write styles that can *supersede* the Leaflet CSS.)
+
+
+```xml
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+```
+
+Put the Leaflet JavaScript file at the bottom of the body section.
+
+```xml
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+```
+
+#### 2. Create a DIV element for the map
+
+In your page, create a **div** element that will hold our map. Name it with **id="map"**.
+
+```xml
+<div id="map" style="width: 150px; height:180px;"></div>
+```
+
+This *div* element will hold the map we define in our script.
+
+#### 3. Initialize your Map
+
+To initialize your map, you need to create a JavaScript variable named map that uses the **map** object of the Leaflet library. Here you can set the initial latitude and longitude, along with the zoom level and few other properties.
+
+After that, set up a tile layer as a variable that you can add to the map element as a basemap. Without the tile layer, you will not see anything in your map. After you create the tile layer using the L.tileLayer object, add it to the map using the addTo method. Your code will look like the following.
+
+```js
+var map = L.map('map').setView([51.505, -0.09], 13);
+
+var OSM_Tiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+OSM_Tiles.addTo(map);
+```
+
+Save and refresh your page. You should see a Leaflet slippy map!
+
+#### 4. Add some data
+
+Leaflet is designed natively to work with JSON objects. Specifically, it will load GeoJSON objects and display the geometry and properties. This is a very nice feature, because using JavaScript, you can access all of the features of the JSON displayed in Leaflet in other parts of your code.
+
+To add a CSV, you need to use a plugin for Leaflet called [Omnivore](https://github.com/mapbox/leaflet-omnivore). Omnivore is a JavaScript library that loads CSV, TSV, and other data sources in to your Leaflet map.
+
+To add Omnivore to your map use the following code. Put it after the call to the Leaflet JS file.
+
+```js
+<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+```
+
+To add a CSV to your map, use the CSV method of the Omnivore library. **a.csv** should be the path to and name of your CSV.
+
+```js
+omnivore.csv('a.csv').addTo(map);
+```
+
+Save and refresh your page.
+
+We have a full course on mapping with Leaflet on the DUSPviz website. You can find it at the following address!
+
+[http://duspviz.mit.edu/web-map-workshop/](http://duspviz.mit.edu/web-map-workshop/)
 
 ### Website Frameworks
 
@@ -448,4 +526,10 @@ For a crash course in Bootstrap, a highly used and robust framework, please visi
 ====
 ### Push to Github
 
-Finally, when done with your edits. Commit yourPush your site to Github
+Finally, when done with your edits. Commit your site to your Github.
+
+===
+
+### Exercise
+
+Customize your Website and add a Leaflet map that has the location of the tweets you collected in Boston in Week 4.
