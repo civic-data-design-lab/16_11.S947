@@ -415,6 +415,36 @@ console.log(dataset.geometry.coordinates);
 console.log(dataset.properties);
 ```
 
+#### Iterate a JSON - Putting this Together
+
+Given that you can access data elements in arrays, you can see then how parsing and accessing various elements of your JSON is easy. Can you iterate through the directory array?
+
+Try the following block of code in your console:
+
+```js
+// employee directory dataset
+var directory = {"employees":[
+    {"firstName":"John", "lastName":"Doe"}, 
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter", "lastName":"Jones"}
+]}
+
+// create array of employee names
+var data = directory.employees;
+console.log(data);
+
+// iterate through the array, logging values to the console
+for(var i in data){
+    fName = data[i].firstName;
+    lName = data[i].lastName;
+    // do something with each value of the array
+    console.log(fName);
+    console.log(lName);
+}
+```
+
+Note the differences with Python.
+
 #### Accessing Elements of your Page
 
 Accessing elements of your page in JavaScript is easy because JavaScript can read the DOM, then adjust properties such as style, content, images, links, and alot more. One method you can use to get into the document is call the document object. Type this into your console and see that you can view the entire page.
