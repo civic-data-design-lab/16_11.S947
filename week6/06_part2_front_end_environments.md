@@ -4,6 +4,8 @@
 All the files you will want to use today are provided in the Week 6
 folder of the class repo. The files for the website are in 'website'.
 
+This is a continuation of [Front End Environments Part 1: HTML and CSS](https://github.com/civic-data-design-lab/16_11.S947/blob/master/week6/06_part1_front_end_environments.md).
+
 ### JavaScript: The Core Concepts
 
 In the website ecosystem, the next component is the behavior. How do we take these styled elements and interact with them in a manner in which we can load data, dynamically populate elements, and create animations and interactions. This is where JavaScript comes in.
@@ -85,6 +87,17 @@ L.tileLayer().addTo(map);
 
 // ie when working with D3
 d3.select("body").append("svg");
+
+// properties and methods
+var car = {
+    make:"Ford",
+    model: "Mustang",
+    year: 2013,
+    color: "Red"
+    start: function(){
+    	console.log("Car started!");
+    }
+};
 ```
 
 Our page elements from our HTML webpage document can be referenced through JavaScript. Using JavaScript, we can change the properties of these elements and tell them to do things, like change color, or disappear. Imagine in our car example, to create a Ferrari and tell it to be red, we can create a car **div** with **id="myFerrari"**, then make it red by setting the **color** method **(myFerrari.color = "red")**.
@@ -220,7 +233,9 @@ console.log(workshop.name);
 You can place functions within variables.
 
 ```js
-var myFunction = function(){};
+var myFunction = function(argument){
+	// function code goes here
+};
 ```
 
 #### Variable Scope
@@ -310,6 +325,8 @@ True
 False
 ```
 
+If statements can be used to check if elements on in your page, or if properties are set to certain values. For example, you can toggle layers on and off in a web map by using an if statement to see if the layers is visible. If visible is true, hide the layer, and vice versa. 
+
 Conditionals are powerful! You can use multiple else statements to explore multiple options.
 
 ```js
@@ -330,13 +347,26 @@ Loops go through a piece of code a set number of times.
 
 **For Loop**
 
+A basic for loop will use the following syntax. Note the first argument is an index for the the start value, the second is a conditional for the index stating where the loop will stop when the value is false, and the last is the increment of the loop. Note the syntax, <strong>i++</strong> will increase i by 1 every single time the loop circles. The code in the middle is what will run.
+
 ```js
 for(var i=0; i<1000, i++){
 	// code here will run 1000 times, then move on to the next
 }
 ```
 
+You can also use for loops to loop through arrays and datasets.
+
+```js
+// iterate through a dataset, logging values to the console
+for(var i in data){
+    // run this on each value in data
+}
+```
+
 **While Loop**
+
+Similar to the for loop, the while loop
 
 ```js
 var counter = 0;
@@ -345,7 +375,8 @@ while(counter < 1000){
 	counter += 1 // adds 1 to counter each time, will stop at 1000
 }
 ```
-Loops that don't end will crash your program!
+
+Loops that don't end are called infinite loops, and they will crash your program!
 
 #### Functions
 
@@ -375,7 +406,12 @@ var newCar = {
 	}
 }
 
+// view the data values
 console.log(newCar);
+console.log(newCar.make);
+
+// or start the car
+newCar.start();
 ```
 
 #### JSON: JavaScript Object Notation
@@ -450,46 +486,80 @@ Note the differences with Python.
 Accessing elements of your page in JavaScript is easy because JavaScript can read the DOM, then adjust properties such as style, content, images, links, and alot more. One method you can use to get into the document is call the document object. Type this into your console and see that you can view the entire page.
 
 ```js
-document.getElementById("image").src = "landscape.jpg";
+document;
 ```
 
-**Putting this together:**
+Try <strong>document.body</strong> to see elements within the document body.
 
-* Variables are local if they are defined in functions.
-* Functions are actually objects.
+##### Access elements by ID, class, or  and make changes to properties
 
-This is alot... you don't have to write everything from scratch!
+You can access elements by DOM selectors. Use the [W3 HTML DOM Elements](http://www.w3schools.com/js/js_htmldom_elements.asp) reference to learn more about searching through the page. 
+
+```js
+// Access element by element ID
+document.getElementById("foo");
+
+// Access element by class name
+document.getElementByClassName("class-name")';
+```
+
+#### Event Listeners
+
+Often, when working with JavaScript, you are interacting with a page. Using JavaScript, you can make element perform functions when something happens to them. This is called an event. Event listeners can be added to elements and will run functions when an event, such as a click, hover, or other user interaction occurs on that element. Example syntax, enabling a change on an element named <strong>foo</strong> by creating an event listener in JavaScript is as follows.
+
+```js
+// listen for a click on 'foo'
+// when click occurs, run function called displayDate
+document.getElementById("foo").addEventListener("click", displayDate);
+
+// displayDate function
+function displayDate() {
+    document.getElementById("foo").innerHTML = Date();
+}
+```
+
+This is something you can simplify using the jQuery library!
 
 #### Working with Libraries
 
-A library is a collection of pre-written JavaScript with allows for easier development of JavaScript based applications. Libraries are packages of code that when loaded into your document allow access to the objects of that code. In this class, we are primarily going to be using three JavaScript libraries: **jQuery**, **Leaflet**, and **D3**.
+Unless you want to become a hardcore JavaScript master, most often, you will be working with a library that is already written. A library is a collection of pre-written JavaScript with allows for easier development of JavaScript based applications. Libraries are packages of code that when loaded into your document allow access to the objects of that code. In this class, we are primarily going to be using three JavaScript libraries: **jQuery**, **Leaflet**, and **D3**.
 
 What are these used for?
 
-**jQuery** is great for adding user interaction and making calls to other websites, for example, you can easily use it to load data.
+**jQuery** is great for adding user interaction and making calls to other websites, for example, you can easily use it to load data. [Visit the jQuery homepage](http://jquery.com/).
+
+Adding jQuery to your webpage is done by including the following line of code at the bottom of your body section. Please put this in your page.
+
+```xml
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+```
 
 **Leaflet** is an easy to use mapping library that makes nice slippy maps for displaying data.
 
 **D3** stands for Data Driven Documents, and is a library designed for visualizing data and making beautiful interactive graphics. D3 uses JavaScript to **bind** data values to page elements and changes properties of those elements accordingly. Very powerful. We will do this next week!
 
-For now... let's use the Leaflet library to create a webmap of Tweets in Riyadh.
+For now... let's use the Leaflet library to create a web-powered map.
 
 #### Let's Make a Leaflet Map
 
 [Leaflet](http://leafletjs.com/) is a library designed for making web-powered maps using JavaScript. The library contains many objects that help with designing maps. The main method of the library is to take a **div** element and turn it into a [slippy map](http://wiki.openstreetmap.org/wiki/Slippy_Map). You can then use other methods of the library to add data layers, user interaction, and styling. In this exercise, we are going to set up a very simple map on our page to show the use of JavaScript.
 
+The API documentation is here for your reference.
+
+[Leaflet API Reference](http://leafletjs.com/reference.html)
+
 #### 1. Add the Library
 
 To add the Leaflet library to your page, you need to add both the script and stylesheets to your document. In your document, add the following. This will add the main Leaflet CSS stylesheet and JavaScript library to our document so we can use the styles and methods.
 
-Put the Leaflet CSS file in the head section. (Note: Put this *above* the main.css link in your stylesheet. CSS runs in order down your page, this will let you write styles that can *supersede* the Leaflet CSS.)
+Put the Leaflet CSS file in the head section. (Note: Put this *above* the main.css link in your stylesheet. CSS runs in order down your page, this will let you write styles that can *supersede* the Leaflet CSS.) 
 
 
 ```xml
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 ```
 
-Put the Leaflet JavaScript file at the bottom of the body section.
+Put the Leaflet JavaScript file at the bottom of the body section, right after where you put the call to jQuery.
 
 ```xml
 <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
@@ -512,7 +582,7 @@ To initialize your map, you need to create a JavaScript variable named map that 
 After that, set up a tile layer as a variable that you can add to the map element as a basemap. Without the tile layer, you will not see anything in your map. After you create the tile layer using the L.tileLayer object, add it to the map using the addTo method. Your code will look like the following.
 
 ```js
-var map = L.map('map').setView([51.505, -0.09], 13);
+var map = L.map('map').setView([24.714171, 46.676795], 13); // create the map element
 
 var OSM_Tiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
@@ -526,7 +596,37 @@ Save and refresh your page. You should see a Leaflet slippy map!
 
 #### 4. Add some data
 
-Leaflet is designed natively to work with JSON objects. Specifically, it will load GeoJSON objects and display the geometry and properties. This is a very nice feature, because using JavaScript, you can access all of the features of the JSON displayed in Leaflet in other parts of your code.
+Leaflet is designed natively to work with JSON objects. Specifically, it will load GeoJSON objects and display the geometry and properties. This is a very nice feature, because using JavaScript, you can access all of the features of the JSON displayed in Leaflet in other parts of your code. If you want to add non-JSON data, see the options available on the [Leaflet Data Formats Plugins](http://leafletjs.com/plugins.html#overlay-data-formats).
+
+##### Add GeoJSON
+
+Adding GeoJSON to your map requires you to load the file, loop through it for data features, and then add those features to the <em>map</em> element in your document. GeoJSON files can contain points, lines, or polygons. In your materials, locate <strong>riyadh_taz.geojson</strong>. This is a GeoJSON file of the TAZ polygons in Riyadh. Add this to your map using the following bits of JavaScript, jQuery, and Leaflet.
+
+```js
+// load GeoJSON from an external file
+$.getJSON("data/riyadh_taz.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+});
+```
+
+Notice in the above code, we loaded the JSON, then within the JSON load function, we used the [L.geoJson](http://leafletjs.com/reference.html#geojson) object to add the data elements we loaded to the map. Within this function, you can perform various operations for the data. For example, if we want to add a popup, use the <em>onEachFeature</em> option of the L.geoJson object. This loops through each feature and can add a popup. Replace the code above with the following to implement this. Another option you will use frequently is [Point to Layer](http://leafletjs.com/reference.html#geojson-pointtolayer). This lets you replace the default markers with custom markers.
+
+```js
+// load GeoJSON from an external file
+$.getJSON("data/riyadh_taz.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data,{
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup(feature.properties.TAZ); // find the TAZ value in the dataset
+        }
+    }).addTo(map);
+});
+```
+
+This will create a popup that will let us click on each feature and see the number of the TAZ. Another option you will use frequently is [Point to Layer](http://leafletjs.com/reference.html#geojson-pointtolayer). This lets you replace the default markers with custom markers.
+
+##### Add a CSV
 
 To add a CSV, you need to use a plugin for Leaflet called [Omnivore](https://github.com/mapbox/leaflet-omnivore). Omnivore is a JavaScript library that loads CSV, TSV, and other data sources in to your Leaflet map.
 
@@ -544,9 +644,23 @@ omnivore.csv('a.csv').addTo(map);
 
 Save and refresh your page.
 
-We have a full course on mapping with Leaflet on the DUSPviz website. You can find it at the following address!
+#### Other Leaflet Plugins
 
-[http://duspviz.mit.edu/web-map-workshop/](http://duspviz.mit.edu/web-map-workshop/)
+Leaflet has many additional plugins other than those that deal with data that can help you do your work. Find them in a central repository on the Leaflet page.
+
+[Leaflet Plugins](http://leafletjs.com/plugins.html)
+
+#### Web Map Workshop
+
+If you want to learn more, and dig into Leaflet further. We have a full course on mapping with Leaflet on the DUSPviz website. You can find it at the following address! Here are some good sites.
+
+[DUSPVIZ](http://duspviz.mit.edu/web-map-workshop/)
+
+[LeafletJS Examples](http://leafletjs.com/examples.html)
+
+[Making a Leaflet Choropleth Map](http://leafletjs.com/examples/choropleth.html)
+
+[Leaflet Proportional Symbol Map Example](http://bl.ocks.org/rgdonohue/bb2fdafab5ee7532df52)
 
 ### Website Frameworks
 
@@ -559,12 +673,12 @@ For a crash course in Bootstrap, a highly used and robust framework, please visi
 USE TEMPLATES! They will make your life so much easier!
 
 ====
-### Push to Github
+### Publish your Site! Push to Github
 
 Finally, when done with your edits. Commit your site to your Github.
 
 ===
 
-### Exercise
+### Problem Set
 
-Customize your Website and add a Leaflet map that has the location of the tweets you collected in Boston in Week 4.
+Customize your Website and add a Leaflet map.
