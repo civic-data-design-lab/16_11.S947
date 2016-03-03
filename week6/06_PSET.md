@@ -19,6 +19,8 @@ Using data from Riyadh in the shared Dropbox, this Leaflet map should contain:
 * make one of the layers interactive (ie with a popup)
 * 1 basemap tile layer (such as openstreetmap)
 
+On your website, get rid of the cat image, replace it with one of your own :)
+
 ### Deliverable
 
 Place this map on your [username].github.io website and submit the URL to Stellar.
