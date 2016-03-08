@@ -32,8 +32,6 @@ When you are working with D3, some of your main goals will be to:
 
 #### Link a JavaScript Document to your Site
 
-CSS can be added to style your website in one of a few ways. You can apply CSS to individual elements, embed it within your HTML document, or create a separate CSS file and link it to your HTML doc. In your file, add the following link in **head** section of your document.
-
 JavaScript can be added to your website by either typing in script between two **script** tags, or by linking a JavaScript file your site. In your file, at the bottom of the **body** section, add the following code snip. This will read all code found in the *main.js* file that is in the **js** folder.
 
 ```xml
@@ -44,6 +42,14 @@ In the body of your HTML document, above the script. Add a button using the foll
 
 ```xml
 <button type="button" onclick="helloworld()">Click Me!</button>
+```
+
+So where is **helloworld()**? It is in the **main.js** document. The structure of it is as follows. It looks through the document to find an element named **foo**, then changes the HTML within that element to 'Hello JavaScript!'.
+
+```js
+function helloworld() {
+    document.getElementById('foo').innerHTML = 'Hello JavaScript!';
+}
 ```
 
 Now, we are programming! Let's learn JavaScript!
@@ -233,10 +239,12 @@ console.log(workshop.name);
 You can place functions within variables.
 
 ```js
-var myFunction = function(argument){
+var myFunction = functionName(argument){
 	// function code goes here
 };
 ```
+
+When you call the variable **myFunction**, it will run the function you have stored in that variable.
 
 #### Variable Scope
 
@@ -246,7 +254,7 @@ How long do variables last when you declare them? There are two main types of va
 
 ```js
 // code that sits here can not use carName
-function myFunction() {
+function functionName() {
     var carName = "Volvo";
     // code here can use carName
 }
@@ -257,7 +265,7 @@ function myFunction() {
 ```js
 var carName = " Volvo";
 // code here can use carName
-function myFunction() {
+function functionName() {
     // code here can use carName
 }
 ```
@@ -537,6 +545,10 @@ Adding jQuery to your webpage is done by including the following line of code at
 **Leaflet** is an easy to use mapping library that makes nice slippy maps for displaying data.
 
 **D3** stands for Data Driven Documents, and is a library designed for visualizing data and making beautiful interactive graphics. D3 uses JavaScript to **bind** data values to page elements and changes properties of those elements accordingly. Very powerful. We will do this next week!
+
+#### Server-side JavaScript
+
+JavaScript is usually a client-side language, meaning all of the code goes to the client. This can present efficiency problems and introduce security problems though, for obvious reasons. It is possible to use JavaScript on the server-side. Probably the most popular server-side JavaScript implementation is [NodeJS](https://nodejs.org/en/). NodeJS is a runtime that runs on the server to provide fast and dynamic applications, and pushes select output to the client. It can be used for both production and development, and allows you to install Leaflet, D3 and other libraries on your server. We have plenty else to focus on today, however, so this can come later.
 
 For now... let's use the Leaflet library to create a web-powered map.
 

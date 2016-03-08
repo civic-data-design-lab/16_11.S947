@@ -5,8 +5,8 @@ All the files you will want to use today are provided in the Week 6
 folder of the class repo. The files for the website are in 'website'.
 
 In the following steps, we create a blank document, fill it with HTML
-code, save it as **index.html**, and view results in our browser. We
-will hit on the concepts of HTML, style the page with CSS, and add interaction using JavaScript.
+code, save it as an HTML file, and view results in our browser. Through the exercise, we
+will hit on the concepts of HTML, and then style the page with CSS and add interaction using JavaScript.
 
 #### Getting Started
 
@@ -15,6 +15,8 @@ the work we completed in Week 1. Push your files your Github site to
 publish your page. If you need a refresher, revisit Week 1 at:
 
 [Week 1 - Intro to Git and Github](https://github.com/civic-data-design-lab/16_11.S947/blob/master/week1/Part1_IntroGitAndGithub.ipynb)
+
+Start this week by copying the **website** folder in the class repo to your github.io directory. Then **change directory** in the terminal to this folder (website). This is our web directory that you can access by going to **username.github.io/website**.
 
 *How is everything related?*
 
@@ -25,15 +27,19 @@ of your page by creating elements in which your page materials are contained.
 
 ### Organize your Directory
 
-The directory in which you keep your website materials should be organized in the following manner.
+The web directory should be organized in the following manner.
 
-When a browser requests your page, your server will return the index.html file in the root-directory. The index.html is your 'root'... or 'home'... page.
+When a browser requests your page, your server will return the index.html file in the root-directory. The **index.html** is your 'root'... or 'home'... page.
 
 <img src="http://duspviz.mit.edu/wp-content/uploads/2015/01/file-structure.png" alt="Drawing"/>
 
+### Use a Text Editor
+
+Code is best written using a code editor such as [Sublime Text](https://www.sublimetext.com/). To complete the exercise, you will want to edit the files in the web folder using Sublime. If you do not have it installed, please [download](https://www.sublimetext.com/) it and install it at this time.
+
 ### Start up a Web Server
 
-To work with our website, we need our computer to act like a webserver, allowing it to access files online. There are many tools for doing this, and one is built right into python. Use the Terminal to change into the directory in which your website files reside. Once there, type the following to start a simple Python server.
+To work with our website, we need our computer to act like a webserver, allowing it to access files online. There are many tools for doing this, and one is built right into python. Use the Terminal to **change directory** to the folder in which your website files reside. Once there, type the following to start a simple Python server.
 
 ```xml
 $ python -m SimpleHTTPServer 8080
@@ -41,9 +47,11 @@ $ python -m SimpleHTTPServer 8080
 
 Now open a browser and access your site at: **http://localhost:8080**
 
-Modify and change folders in web folder, save and then refresh your page. Your page will appear as it would if it were live on the internet, except only visible to you locally. For more on this [click here](http://duspviz.mit.edu/tutorials/localhost-servers/).
+Modify and change folders in web folder, save and then refresh your page. Your page will appear as it would if it were live on the internet, except only visible to you locally. For more on the Python Web Server, see the following[DUSPviz page on localhosts](http://duspviz.mit.edu/tutorials/localhost-servers/).
 
 ### HTML: The Core Concepts
+
+Let's get started! Create a new blank text document in Sublime Text and save it as **index.html** in your web folder. The following introduces the core concepts behind HTML.
 
 All HTML documents start with the following line of code:
 
@@ -70,7 +78,7 @@ Comments look like the following. They are used to write human-readable notes in
 <!-- ... -->
 ```
 
-A basic page, all together, will look like this. This will look awfully similar to week 1. Copy and paste this into a blank text document, and save it in your **github.io** repository as *hello-world.html*.
+A basic page, all together, will look like this. This will look awfully similar to week 1. Copy and paste this into a blank text document, and save it in your **github.io/website** repository as *index.html*. This will now become the main page for you website.
 
 ```xml
 <!DOCTYPE html>
@@ -183,11 +191,12 @@ Our HTML document is looking bare, we need to add content. We can start by modif
 Modify the HTML code on the page to include the following. Add some paragraph **p** elements within the **div** element of your page.
 
 ```xml
+<h1 id="headtext">Body Heading</h1>
 <p id="foo">This is my first paragraph.</p>
 <p id="bar">This is my second paragraph.</p>
 ```
 
-The h1 tag signifies a heading, this is a bolded style of text that vary in size ranging from h1 to h6. The p tag signifies a paragraph that can contain large blocks of text. 
+The h1 tag signifies a heading, this is a bolded style of text that vary in size ranging from h1 to h6. The p tag signifies a paragraph that can contain large blocks of text. [Read more about HTML page elements](https://www.lehigh.edu/~inwww/seminar/reference/htmlchart.html).
 
 #### ii. Add a Link
 
@@ -197,14 +206,15 @@ Adding a link to your site is simple. To add a link, we use the a tag. The a tag
 <a href="http://dusp.mit.edu">Take me to DUSP.</a>
 ```
 
+You have many options for links. [Read about them here](http://www.w3schools.com/tags/tag_a.asp). For example, if you want a link to open in a new page, you can use **target="_blank"** as a property of the A tag.
+
 *Can you add a link that takes you to Google Maps?*
 
 #### iii. Add an Image
 
 Adding an image is just as easy as adding a hyperlink, although a bit different. An image is not stored on your webpage, but it sits on your server, just like your other files. When you display an image in an html file, you are linking to the image. The HTML tells the browser to locate and display it. Therefore, we will follow a multiple step process.
 
-* Create a folder named <strong>images</strong> in your special folder. <em>You only need to do this once, you can place all subsequent images here.</em>
-* Copy and paste <strong>cat.png</strong> from the downloaded materials into the <strong>images</strong> folder you just created.
+* Locate the folder named <strong>images</strong> that you copied to your web directory. <em>You will find one image here named **cat.png**. Here you store all subsequent images you want to use in your page.</em>
 * Use the <strong>img</strong> tag to link to that image in your <strong>index.html</strong>
 
 Your file structure, once the <strong>images</strong> folder is created and you have copied <strong>cat.png</strong>. In other words, the image is now being served.
@@ -216,6 +226,12 @@ Now we can add the image to our index.html. The following line of code uses the 
 Copy and paste this following line in between the <strong>body</strong> tags in your <strong>index.html</strong>, after your last paragraph.
 
 *Can you add another image, perhaps one showing Riyadh?*
+
+If you want to add an image from another page, you can simply include the URL at which the image is located. The following links to an image on Wikimedia.
+
+```xml
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/North_End%2C_Boston.jpg"/>
+```
 
 #### Our Code
 
@@ -381,6 +397,18 @@ a:hover {
   color: orange;
 }
 ```
+
+#### Chaining
+
+To find selectors that are nested within other selectors, you can use the concept of **chaining**. Chaining is how we identify multiple ids, classes, and selectors.
+
+```css
+a circle {
+  color: orange;
+}
+```
+
+[Read more about it here.](https://css-tricks.com/multiple-class-id-selectors/)
 
 #### The Box Model: Size and Positioning
 
