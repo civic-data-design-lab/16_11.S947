@@ -11,7 +11,7 @@ Customize your website on Github by using Leaflet and JavaScript to add a Leafle
 
 Using data from Boston, this Leaflet map should contain:
 
-* 1 GeoJSON layer (ie Boston and Cambridge Neighborhoods)
+* At least 1 GeoJSON layer (ie Boston and Cambridge Neighborhoods)
 * 1 CSV layer
 * make one of the layers interactive (ie with a popup showing tweet ID or tweet time)
 * 1 basemap tile layer (such as openstreetmap or Stamen)
