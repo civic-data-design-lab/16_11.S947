@@ -544,7 +544,13 @@ Adding jQuery to your webpage is done by including the following line of code at
 
 **Leaflet** is an easy to use mapping library that makes nice slippy maps for displaying data.
 
-**D3** stands for Data Driven Documents, and is a library designed for visualizing data and making beautiful interactive graphics. D3 uses JavaScript to **bind** data values to page elements and changes properties of those elements accordingly. Very powerful. We will do this next week!
+**D3** stands for Data Driven Documents, and is a library designed for visualizing data and making beautiful interactive graphics. D3 uses JavaScript to **bind** data values to page elements and changes properties of those elements accordingly. Very powerful.
+
+#### Stand Up a Simple D3 Graphic
+
+D3 is a largely open source and freely available library. Next week, we will get into the guts of D3, but one of the best ways to get started is to read and implement some of the code available online. Mike Bostock, the creator of D3, has implemented a website called [Bl.ocks](https://bl.ocks.org/-/about) that is designed to display code and showcase examples of D3 code saved on Github. Users can create a [Github Gist](https://gist.github.com/), and then point people to Bl.ocks to view the example. For example, a really simple network block, created by user Jose Christian, can be found on [his block page](http://bl.ocks.org/jose187/4733747).
+
+To stand up a simple D3 visualization from blocks, copy the respective files into empty files on your server, name them appropriately, and then load your page. Can you stand up the [Force Directed Graph](http://bl.ocks.org/mbostock/4062045) at this link?
 
 #### Server-side JavaScript
 
