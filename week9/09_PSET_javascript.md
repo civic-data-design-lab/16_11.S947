@@ -18,5 +18,7 @@ Using data from Boston, this Leaflet map should contain:
 
 ### Bonus Exercise!
 
-Explore the [Bl.ocks](http://bl.ocks.org/) website. Locate and find one Bl.ock that you can set up on your site. You don't need to do any customization or change data at this point, we will explore that in subsequent weeks. Stand up the Bl.ock you find on your website.
+Explore the [Bl.ocks](http://bl.ocks.org/) website. Locate and find one Bl.ock that you can set up on your site. **The Bl.ock you use doesn't have to be from the Bl.ock homepage (although it can be), feel free to search other Bl.ocks that you might find relevant to your project on Google and stand one up if you want.**
+
+You don't need to do any customization or change data at this point, we will explore that in subsequent weeks. Stand up the Bl.ock you find on your website.
 
