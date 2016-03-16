@@ -18,14 +18,7 @@ Using data from Boston, this Leaflet map should contain:
 
 On your website, get rid of the cat image, replace it with one of your own :)
 
-### Deliverable
+### Bonus Exercise!
 
-Place this map on your [username].github.io website and submit the URL to Stellar.
-
-<strong>Bonus</strong> customize your website by adding some style.
-
-1. Change the font
-2. Style the GeoJSON so it is not the default symbols (blue markers/polygons) See the following for help with this: [Leaflet Symbolization](http://duspviz.mit.edu/web-map-workshop/map-symbolization/)
-2. Adjust the layout and size of the map and various elements
-3. Use a template like [Bootstrap](http://duspviz.mit.edu/web-map-workshop/bootstrap-templates/) in your page customization
+Explore the [Bl.ocks](http://bl.ocks.org/) website. Locate and find one Bl.ock that you can set up on your site. You don't need to do any customization or change data at this point, we will explore that in subsequent weeks. Stand up the Bl.ock you find on your website.
 
