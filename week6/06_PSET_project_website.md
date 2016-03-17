@@ -24,7 +24,7 @@ On your website:
 2. Name of your project team and a short summary of your project
 3. Include a copy of your revised mid-term presentation
 
-#### Some suggestions
+##### Some suggestions
 
 Use a template like [Bootstrap](http://duspviz.mit.edu/web-map-workshop/bootstrap-templates/) in your page customization. The tutorial at this link shows you [how to get started with customizing Bootstrap](http://duspviz.mit.edu/web-map-workshop/bootstrap-templates/). You can find free Bootstrap tempates at [http://startbootstrap.com](http://startbootstrap.com/).
 
