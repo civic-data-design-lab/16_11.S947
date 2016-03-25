@@ -554,7 +554,7 @@ To stand up a simple D3 visualization from blocks, copy the respective files int
 
 #### In Class Example
 
-Display standing up of [D3 map of US Counties](http://bl.ocks.org/mbostock/4060606). Your homework will be based on this exercise.
+Display standing up of [D3 map of US Counties](http://bl.ocks.org/mbostock/3306362). Your homework will be based on this Bl.ock example.
 
 #### Server-side JavaScript
 

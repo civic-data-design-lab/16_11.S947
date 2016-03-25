@@ -1,13 +1,13 @@
 # Front End Environments
 ## HTML/CSS/JavaScript: Problem Set
 
-The data you need for this exercise can be found on [bl.ocks](http://bl.ocks.org/mbostock/4060606) and in the data folder. To complete the exercise, you will need data in **health_care_2014.csv**.
+The data you need for this exercise can be found on [bl.ocks](http://bl.ocks.org/mbostock/3306362) and in the data folder. To complete the exercise, you will need data in **health_care_2014.csv**.
 
 ### Instructions
 
 For this Problem Set:
 
-One of the best ways to learn a new library is to read through code and customize it to get started. In this Problem Set, take the [Choropleth Map of US Counties](http://bl.ocks.org/mbostock/4060606) by Mike Bostock, which currently shows unemployment in 2008, and customize it by changing the data shown to **percent without health coverage by county**.
+One of the best ways to learn a new library is to read through code and customize it to get started. In this Problem Set, take the [Choropleth Map of US Counties](http://bl.ocks.org/mbostock/3306362) by Mike Bostock, which currently shows unemployment in 2008, and customize it by changing the data shown to **percent without health coverage by county**.
 
 The health coverage data is from American Community Survey, 2014 Five-Year Estimates. Please include a citation in your map.
 
