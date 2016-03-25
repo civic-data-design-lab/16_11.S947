@@ -548,125 +548,19 @@ Adding jQuery to your webpage is done by including the following line of code at
 
 #### Stand Up a Simple D3 Graphic
 
-D3 is a largely open source and freely available library. Next week, we will get into the guts of D3, but one of the best ways to get started is to read and implement some of the code available online. Mike Bostock, the creator of D3, has implemented a website called [Bl.ocks](https://bl.ocks.org/-/about) that is designed to display code and showcase examples of D3 code saved on Github. Users can create a [Github Gist](https://gist.github.com/), and then point people to Bl.ocks to view the example. For example, a really simple network block, created by user Jose Christian, can be found on [his block page](http://bl.ocks.org/jose187/4733747).
+D3 is a largely open source and freely available library. Next week, we will get into the guts of D3, but one of the best ways to get started is to read and implement some of the code available online. Mike Bostock, the creator of D3, has implemented a website called [Bl.ocks](https://bl.ocks.org/-/about) that is designed to display code and showcase examples of D3 code saved on Github. Users can create a [Github Gist](https://gist.github.com/), and then point people to Bl.ocks to view the example. For example, a really simple network block, created by user Jose Christian, can be found on [his Bl.ock page](http://bl.ocks.org/jose187/4733747).
 
 To stand up a simple D3 visualization from blocks, copy the respective files into empty files on your server, name them appropriately, and then load your page. Can you stand up the [Force Directed Graph](http://bl.ocks.org/mbostock/4062045) at this link?
+
+#### In Class Example
+
+Display standing up of [D3 map of US Counties](http://bl.ocks.org/mbostock/4060606). Your homework will be based on this exercise.
 
 #### Server-side JavaScript
 
 JavaScript is usually a client-side language, meaning all of the code goes to the client. This can present efficiency problems and introduce security problems though, for obvious reasons. It is possible to use JavaScript on the server-side. Probably the most popular server-side JavaScript implementation is [NodeJS](https://nodejs.org/en/). NodeJS is a runtime that runs on the server to provide fast and dynamic applications, and pushes select output to the client. It can be used for both production and development, and allows you to install Leaflet, D3 and other libraries on your server. We have plenty else to focus on today, however, so this can come later.
 
-For now... let's use the Leaflet library to create a web-powered map.
-
-#### Let's Make a Leaflet Map
-
-[Leaflet](http://leafletjs.com/) is a library designed for making web-powered maps using JavaScript. The library contains many objects that help with designing maps. The main method of the library is to take a **div** element and turn it into a [slippy map](http://wiki.openstreetmap.org/wiki/Slippy_Map). You can then use other methods of the library to add data layers, user interaction, and styling. In this exercise, we are going to set up a very simple map on our page to show the use of JavaScript.
-
-The API documentation is here for your reference.
-
-[Leaflet API Reference](http://leafletjs.com/reference.html)
-
-#### 1. Add the Library
-
-To add the Leaflet library to your page, you need to add both the script and stylesheets to your document. In your document, add the following. This will add the main Leaflet CSS stylesheet and JavaScript library to our document so we can use the styles and methods.
-
-Put the Leaflet CSS file in the head section. (Note: Put this *above* the main.css link in your stylesheet. CSS runs in order down your page, this will let you write styles that can *supersede* the Leaflet CSS.) 
-
-
-```xml
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-```
-
-Put the Leaflet JavaScript file at the bottom of the body section, right after where you put the call to jQuery.
-
-```xml
-<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-```
-
-#### 2. Create a DIV element for the map
-
-In your page, create a **div** element that will hold our map. Name it with **id="map"**.
-
-```xml
-<div id="map" style="width: 150px; height:180px;"></div>
-```
-
-This *div* element will hold the map we define in our script.
-
-#### 3. Initialize your Map
-
-To initialize your map, you need to create a JavaScript variable named map that uses the **map** object of the Leaflet library. Here you can set the initial latitude and longitude, along with the zoom level and few other properties.
-
-After that, set up a tile layer as a variable that you can add to the map element as a basemap. Without the tile layer, you will not see anything in your map. After you create the tile layer using the L.tileLayer object, add it to the map using the addTo method. Your code will look like the following.
-
-```js
-var map = L.map('map').setView([24.714171, 46.676795], 13); // create the map element
-
-var OSM_Tiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	maxZoom: 19,
-	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-});
-
-OSM_Tiles.addTo(map);
-```
-
-Save and refresh your page. You should see a Leaflet slippy map!
-
-#### 4. Add some data
-
-Leaflet is designed natively to work with JSON objects. Specifically, it will load GeoJSON objects and display the geometry and properties. This is a very nice feature, because using JavaScript, you can access all of the features of the JSON displayed in Leaflet in other parts of your code. If you want to add non-JSON data, see the options available on the [Leaflet Data Formats Plugins](http://leafletjs.com/plugins.html#overlay-data-formats).
-
-##### Add GeoJSON
-
-Adding GeoJSON to your map requires you to load the file, loop through it for data features, and then add those features to the <em>map</em> element in your document. GeoJSON files can contain points, lines, or polygons. In your materials, locate <strong>riyadh_taz.geojson</strong>. This is a GeoJSON file of the TAZ polygons in Riyadh. Add this to your map using the following bits of JavaScript, jQuery, and Leaflet.
-
-```js
-// load GeoJSON from an external file
-$.getJSON("data/riyadh_taz.geojson",function(data){
-    // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data).addTo(map);
-});
-```
-
-Notice in the above code, we loaded the JSON, then within the JSON load function, we used the [L.geoJson](http://leafletjs.com/reference.html#geojson) object to add the data elements we loaded to the map. Within this function, you can perform various operations for the data. For example, if we want to add a popup, use the <em>onEachFeature</em> option of the L.geoJson object. This loops through each feature and can add a popup. Replace the code above with the following to implement this. Another option you will use frequently is [Point to Layer](http://leafletjs.com/reference.html#geojson-pointtolayer). This lets you replace the default markers with custom markers.
-
-```js
-// load GeoJSON from an external file
-$.getJSON("data/riyadh_taz.geojson",function(data){
-    // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data,{
-        onEachFeature: function (feature, layer) {
-            layer.bindPopup(feature.properties.TAZ); // find the TAZ value in the dataset
-        }
-    }).addTo(map);
-});
-```
-
-This will create a popup that will let us click on each feature and see the number of the TAZ. Another option you will use frequently is [Point to Layer](http://leafletjs.com/reference.html#geojson-pointtolayer). This lets you replace the default markers with custom markers.
-
-##### Add a CSV
-
-To add a CSV, you need to use a plugin for Leaflet called [Omnivore](https://github.com/mapbox/leaflet-omnivore). Omnivore is a JavaScript library that loads CSV, TSV, and other data sources in to your Leaflet map.
-
-To add Omnivore to your map use the following code. Put it after the call to the Leaflet JS file.
-
-```js
-<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
-```
-
-To add a CSV to your map, use the CSV method of the Omnivore library. **a.csv** should be the path to and name of your CSV.
-
-```js
-omnivore.csv('a.csv').addTo(map);
-```
-
-Save and refresh your page.
-
-#### Other Leaflet Plugins
-
-Leaflet has many additional plugins other than those that deal with data that can help you do your work. Find them in a central repository on the Leaflet page.
-
-[Leaflet Plugins](http://leafletjs.com/plugins.html)
+### Learning Leaflet
 
 #### Web Map Workshop
 
@@ -699,4 +593,4 @@ Finally, when done with your edits. Commit your site to your Github.
 
 ### Problem Set
 
-Customize your Website and add a Leaflet map.
+Load a D3 map with a new dataset. See PSET 6.
