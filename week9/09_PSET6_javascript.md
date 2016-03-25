@@ -14,10 +14,17 @@ The health coverage data is from American Community Survey, 2014 Five-Year Estim
 With the new data, the webpage containing your map should contain:
 
 * The Counties Basemap
-* Data colored according to the Health Care Data
-* A title.
-* A legend. Use the HTML and CSS code for the legend [from this page on Legends with HTML and CSS](https://www.mapbox.com/tilemill/docs/guides/advanced-legends/). You can put it anywhere on your webpage.
+* Data colored according to the Health Care Data (see hints!)
+* A map title with the name of the map.
+* A legend. You can put it anywhere on your webpage.
 * Credits and attribution.
+
+Hints:
+* The data is in a [CSV](https://github.com/mbostock/d3/wiki/CSV), not a TSV. You will have to change this to load the data.
+* Adjust the ranges by adjusting the [linear scale domain and range](https://github.com/mbostock/d3/wiki/Quantitative-Scales#linear_domain). Manually set breaks, and you can do this by eye, no need for a scientific method at this point. If you want, you can visualize the data in Excel to see the spread.
+* Get your own colors from [ColorBrewer](http://colorbrewer2.org/). Use a sequential scheme and copy and paste the hex colors.
+* Use the HTML and CSS code for the legend [from this page on Legends with HTML and CSS](https://www.mapbox.com/tilemill/docs/guides/advanced-legends/).
+
 
 ### Bonus Exercise!
 
