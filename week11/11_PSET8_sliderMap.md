@@ -23,10 +23,11 @@ You can take some liberty with your design, but should atleast include the follo
 ### Help and Hints
 
 Fields of relevance in **riyadh_traffic_voc.json** are:
-	* voc_am - volume over capacity in morning hours
-	* voc_md - volume over capacity at midday
-	* voc_pm - volume over capacity in evening hours
-	* voc_rd - volumn over capacity for rest of the day
+	
+* voc_am - volume over capacity in morning hours
+* voc_md - volume over capacity at midday
+* voc_pm - volume over capacity in evening hours
+* voc_rd - volumn over capacity for rest of the day
 
 You can refer to the slider example made in class for this exercise.
 
