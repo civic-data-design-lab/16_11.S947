@@ -1,9 +1,13 @@
 # Data Visualization with D3
-## Intro to D3: Make a Chart
+## D3 Mapping: Create a Traffic Map of Riyadh
 
 For the PSET this week, we are going to create an interactive map using Riyadh congestion data. This will build off of the examples created during the in-class exercise.
 
-We would like you to recreate the following map showing traffic congestion around Riyadh during the course of a typical day. The dataset we are using is the **Riyadh Road Network**. You can use some liberty with your design, but should atleast include the following.
+We would like you to recreate the following map showing traffic congestion around Riyadh during the course of a typical day. In the **Riyadh_Data_for_class** folder on Dropbox you will find a file for your use in the **PSET8_data** folder named **riyadh_traffic_voc.json**. Use this JSON for your visualization.
+
+The JSON was created from the **Riyadh Road Network (Old)** road dataset and flows found in the **Routing Results (Congestion)** folder. Flows represented are morning, midday, evening, and rest of the day.
+
+You can take some liberty with your design, but should atleast include the following.
 
 ![Riyadh PM Traffic][timeseries]
 
@@ -17,6 +21,12 @@ We would like you to recreate the following map showing traffic congestion aroun
 4. Add an informative title and supplemental information to your visualization.
 
 ### Help and Hints
+
+Fields of relevance in **riyadh_traffic_voc.json** are:
+	* voc_am - volume over capacity in morning hours
+	* voc_md - volume over capacity at midday
+	* voc_pm - volume over capacity in evening hours
+	* voc_rd - volumn over capacity for rest of the day
 
 You can refer to the slider example made in class for this exercise.
 
