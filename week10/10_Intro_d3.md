@@ -17,3 +17,5 @@ This page will contain the tutorial for the week. We are going to make a bar cha
 
 4. The take-home problem set (PSET7_make_a_barchart) is found at the following in this weeks folder.
 
+[https://github.com/civic-data-design-lab/16_11.S947/blob/master/week10/10_PSET7_make_a_barchart.md](https://github.com/civic-data-design-lab/16_11.S947/blob/master/week10/10_PSET7_make_a_barchart.md)
+
