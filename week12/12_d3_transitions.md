@@ -13,6 +13,6 @@ This week, we are looking at transitions and animations. In other words, transit
 
 [http://duspviz.mit.edu/d3-workshop/transitions-animation/](http://duspviz.mit.edu/d3-workshop/transitions-animation/)
 
-This page will contain the tutorial for the week. We are going to make a map using javascript and D3 methods!
+This page will contain the tutorial for the week. We are going working through making transitions and animations using javascript and D3 methods!
 
 4. There is no take home problem set this week, you should spend the time working on your projects. Take the knowledge from today and continue to learn D3!
