@@ -1,5 +1,5 @@
 # Data Visualization with D3
-## Intro to D3: Make a Chart
+## Intro to D3: Mapping and Time Sliders
 
 This week, we are running through the basics of mapping with D3! Our exercise this week is going to involve creating a map, adding data, and then interaction using a time slider. We will then show a number of examples, and introduce the concepts of working with projections, TopoJSON, choropleths, and tabular data.
 
