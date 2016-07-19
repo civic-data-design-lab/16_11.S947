@@ -110,6 +110,8 @@ Our page elements from our HTML webpage document can be referenced through JavaS
 
 Object properties, and objects themselves, can be stored stored and accessed for later use using variables.
 
+Try typing *car.start*. You should get confirmation your car started. This is a function stored as a property. What is a function? We'll get to that soon, let's talk more about our variables.
+
 #### Variables
 
 Variables are containers that hold data values, simple or complex, that can be referred to later in your code, much like algebra. For example, in order to fully instantiate the Leaflet map object, we have to use our script to create an object that will hold the Leaflet map object. The map object creates a map, but to put in our page, we need to create another object that will contain the map that is created. To do this, we use a [variable](http://www.w3schools.com/js/js_variables.asp).
@@ -246,9 +248,116 @@ var myFunction = functionName(argument){
 
 When you call the variable **myFunction**, it will run the function you have stored in that variable.
 
+#### Functions
+
+Introducing functions. Just like Python, functions are pieces of code that can run when called upon. To use a function, it must be defined using the *function* declaration.
+
+When defining a function, you also define the parameters that are required for the function. These parameters are placeholders for accepting variable values created outside of the function. For example, let's look at a basic function.
+
+```js
+// function declaration with parameters
+function multiply_this(a,b) {
+    return a*b;
+}
+
+// call the function, providing arguments for the parameters
+var x = 4;
+var y = 5;
+
+multiply_this(x,y); // run function with x and y as our arguments
+20 // returned value
+```
+
+When a function reaches a *return* statement, it will stop executing. The return value is returned back to the calling object and carried forward.
+
+##### Parameters versus Arguments
+
+In the function definition above, we listed parameters that are taken by the function. *Parameters* are placeholders for objects that will be passed to the function when called. *Arguments* are the real values of the objects received as parameters for the function when it is invoked.
+
+If a parameter is defined in JavaScript, it must be passed an argument when invoked. However, it is possible to provide default values if an argument is not received. [More on that here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+
+##### Ways to Declare Functions
+
+There are a couple of ways you can declare functions.
+
+1. Function Declarations
+
+Functions are declared using the *function* keyword, then saved for when they are called. Syntax looks as follows.
+
+```js
+// function declaration with two parameters
+function multiply_this(a,b) {
+    return a*b;
+}
+
+// invocation
+multiply_this(x,y)
+20 // return value
+```
+
+2. Function Expression
+
+Functions can be held in variables. These functions are *anonymous functions*, and are not required to have a name.
+
+```js
+// function expression
+// this is an anonymous function (an unnamed function)
+// functions stored in variables do not need a name, but rather are called using the variable name
+var multiply_that = function(a,b){
+    return a*b;
+}
+
+mutiply_that(x,y) // run function
+20 // return value
+```
+
+Anonymous functions, or function expressions, are used alot in D3. When you see a function without a name or declaration, that is what is going on.
+
+[More on Function Definition and Anonymous Functions](http://www.w3schools.com/Js/js_function_definition.asp)
+
+##### Functions as Objects
+
+Functions are objects, and can have both properties and methods. They can be stored as variables and referred to later. Functions can be stored within other objects as methods of that object, and then referred to later. For example:
+
+```js
+var newCar = {
+    make: "Subaru",
+    model: "Forrester",
+    color: "Blue",
+    start: function(){
+        console.log("Vroom!"); // can hold block of code to run!
+    }
+}
+
+// view the data values
+console.log(newCar);
+console.log(newCar.make);
+
+// or start the car
+newCar.start();
+```
+
+##### Function Hoisting
+
+If a function is declared, it can be called before the declaration. This is the default behavior of JavaScript, and it moves functions to the top of the scope. It is called *hoisting*. Function expressions are not hoisted, however.
+
+Functions, as you see, are a pretty big topic, dig in more at the following link. [More on Functions from Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
+
 #### Variable Scope
 
+Scope refers to the set of objects you have access to at any point in your script.
+
 How long do variables last when you declare them? There are two main types of variables, global variables and local variables. Variables declared within a function are **Local** to that function. Values held within a local variable will not be usable after the function ends. Variables declared outside a function are **Global**, and can be used anywhere on the webpage.
+
+##### Global Variable
+
+```js
+var carName = " Volvo";
+// code here can use carName
+function functionName() {
+    // code here can use carName
+}
+```
 
 ##### Local Variable
 
@@ -260,15 +369,7 @@ function functionName() {
 }
 ```
 
-##### Global Variable
-
-```js
-var carName = " Volvo";
-// code here can use carName
-function functionName() {
-    // code here can use carName
-}
-```
+Assigning a value to a variable that is not declared automatically makes that variable global. In general, you want to limit the number of global variables to be only those that are required.
 
 #### More on Methods
 
@@ -385,42 +486,6 @@ while(counter < 1000){
 ```
 
 Loops that don't end are called infinite loops, and they will crash your program!
-
-#### Functions
-
-Just like Python, functions are pieces of code that can run when called upon. They must be defined, and can take arguments that set properties of the function.
-
-```js
-var a = 4;
-var b = 5;
-
-var multiply = function(a,b){
-	return a*b;
-}
-
-mutiply(a,b) // run function
-20 // return value
-```
-
-Functions can be stored as variables and referred to later! Or even stored within objects, and referred to later.
-
-```js
-var newCar = {
-	make: "Subaru",
-	model: "Forrester",
-	color: "Blue",
-	start: function(){
-		console.log("Vroom!"); // can hold block of code to run!
-	}
-}
-
-// view the data values
-console.log(newCar);
-console.log(newCar.make);
-
-// or start the car
-newCar.start();
-```
 
 #### JSON: JavaScript Object Notation
 
@@ -559,6 +624,8 @@ Display standing up of [D3 map of US Counties](http://bl.ocks.org/mbostock/33063
 #### Server-side JavaScript
 
 JavaScript is usually a client-side language, meaning all of the code goes to the client. This can present efficiency problems and introduce security problems though, for obvious reasons. It is possible to use JavaScript on the server-side. Probably the most popular server-side JavaScript implementation is [NodeJS](https://nodejs.org/en/). NodeJS is a runtime that runs on the server to provide fast and dynamic applications, and pushes select output to the client. It can be used for both production and development, and allows you to install Leaflet, D3 and other libraries on your server. We have plenty else to focus on today, however, so this can come later.
+
+For a nice intro to NodeJS, visit the [DUSPviz NodeJS mapping tutorial](http://duspviz.mit.edu/web-map-workshop/leaflet_nodejs_postgis/).
 
 ### Learning Leaflet
 
